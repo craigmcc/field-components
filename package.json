@@ -1,15 +1,15 @@
 {
-  "name": "@craigmcc/field-elements",
+  "name": "@craigmcc/field-components",
   "version": "1.0.0",
-  "description": "React-Bootstrap based components for input fields and correspondinglabels and actions.",
+  "description": "React-Bootstrap based components for input fields and corresponding labels and actions.",
   "main": "index.js",
-  "repository": "github:craigmcc/field-elements",
+  "repository": "github:craigmcc/field-components",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "javascript",
     "bootstrap",
+    "javascript",
     "react",
     "react-bootstrap"
   ],

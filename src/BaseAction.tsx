@@ -1,7 +1,7 @@
-// CommonAction --------------------------------------------------------------
+// BaseAction ----------------------------------------------------------------
 
-// Renders the <Col> element for the action button after a common input
-// element.  It is only rendered if an "action" prop is passed.
+// Renders the <Col> element for the action button after any "Input" component.
+// It is only rendered if an "action" prop is passed.
 
 // External Modules ----------------------------------------------------------
 
@@ -11,11 +11,11 @@ import Col from "react-bootstrap/Col";
 // Internal Modules ----------------------------------------------------------
 
 import ActionButton from "./ActionButton";
-import { ActionButtonProps, CommonActionProps } from "./FieldElementsProps";
+import { ActionButtonProps, BaseActionProps } from "./PropTypes";
 
 // Component Details ---------------------------------------------------------
 
-export const CommonAction = (props: CommonActionProps) => {
+export const BaseAction = (props: BaseActionProps) => {
 
     let actionButtonProps: ActionButtonProps = {
         disabled: props.actionDisabled,
@@ -38,4 +38,4 @@ export const CommonAction = (props: CommonActionProps) => {
 
 }
 
-export default CommonAction;
+export default BaseAction;

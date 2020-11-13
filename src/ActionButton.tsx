@@ -1,6 +1,6 @@
 // ActionButton --------------------------------------------------------------
 
-// Renders a generic button, configured by the specified properties.
+// Renders a generic button control, configured by the specified properties.
 
 // External Modules ----------------------------------------------------------
 
@@ -9,7 +9,7 @@ import Button from "react-bootstrap/Button";
 
 // Internal Modules ----------------------------------------------------------
 
-import { ActionButtonProps } from "./FieldElementsProps";
+import { ActionButtonProps } from "./PropTypes";
 
 // Component Details ---------------------------------------------------------
 

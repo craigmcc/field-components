@@ -1,6 +1,6 @@
-// CommonLabel ---------------------------------------------------------------
+// BaseLabel -----------------------------------------------------------------
 
-// Renders the <Col> element for the label before a common input element.
+// Renders the <Col> component for the label before any "Input" component.
 // It is only rendered if a "label" property is passed.
 
 // External Modules ----------------------------------------------------------
@@ -10,16 +10,16 @@ import Col from "react-bootstrap/Col";
 
 // Internal Modules ----------------------------------------------------------
 
-import { CommonLabelProps } from "./FieldElementsProps";
+import { BaseLabelProps, DEFAULT_LABEL_CLASS_NAME } from "./PropTypes";
 
 // Component Details ---------------------------------------------------------
 
-export const CommonLabel = (props: CommonLabelProps) => {
+export const BaseLabel = (props: BaseLabelProps) => {
 
     return (
         <>
             {props.label ? (
-                <Col className={props.labelClassName ? props.labelClassName : "col-3"}>
+                <Col className={props.labelClassName ? props.labelClassName : DEFAULT_LABEL_CLASS_NAME}>
                     <label htmlFor={props.fieldName ? props.fieldName : "label"}>
                         {props.label}
                     </label>
@@ -30,4 +30,4 @@ export const CommonLabel = (props: CommonLabelProps) => {
 
 }
 
-export default CommonLabel;
+export default BaseLabel;
