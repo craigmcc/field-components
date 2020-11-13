@@ -15,7 +15,13 @@ import Row from "react-bootstrap/Row";
 import BaseAction from "./BaseAction";
 import CheckboxInput from "./CheckboxInput";
 import CheckboxLabel from "./CheckboxLabel";
-import { CheckboxElementProps, DEFAULT_ELEMENT_CLASS_NAME } from "./PropTypes";
+import {
+    BaseActionProps,
+    BaseLabelProps,
+    CheckboxElementProps,
+    CheckboxInputProps,
+    DEFAULT_ELEMENT_CLASS_NAME
+} from "./PropTypes";
 
 // Component Details --------------------------------------------------------
 
@@ -25,9 +31,9 @@ const CheckboxElement = (props: CheckboxElementProps) => {
         <>
             <Row
                 className={props.elementClassName ? props.elementClassName : DEFAULT_ELEMENT_CLASS_NAME}>
-                <CheckboxLabel {...props}/>
-                <CheckboxInput {...props}/>
-                <BaseAction {...props}/>
+                <CheckboxLabel {...props as BaseLabelProps}/>
+                <CheckboxInput {...props as CheckboxInputProps}/>
+                <BaseAction {...props as BaseActionProps}/>
             </Row>
         </>
     )

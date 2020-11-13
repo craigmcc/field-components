@@ -15,7 +15,13 @@ import Row from "react-bootstrap/Row";
 import BaseAction from "./BaseAction";
 import BaseLabel from "./BaseLabel";
 import SelectInput from "./SelectInput";
-import { SelectElementProps, DEFAULT_ELEMENT_CLASS_NAME } from "./PropTypes";
+import {
+    BaseActionProps,
+    BaseLabelProps,
+    SelectElementProps,
+    SelectInputProps,
+    DEFAULT_ELEMENT_CLASS_NAME
+} from "./PropTypes";
 
 // Component Details --------------------------------------------------------
 
@@ -25,9 +31,9 @@ const SelectElement = (props: SelectElementProps) => {
         <>
             <Row
                 className={props.elementClassName ? props.elementClassName : DEFAULT_ELEMENT_CLASS_NAME}>
-                <BaseLabel {...props}/>
-                <SelectInput {...props}/>
-                <BaseAction {...props}/>
+                <BaseLabel {...props as BaseLabelProps}/>
+                <SelectInput {...props as SelectInputProps}/>
+                <BaseAction {...props as BaseActionProps}/>
             </Row>
         </>
     )

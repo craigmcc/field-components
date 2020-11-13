@@ -15,7 +15,13 @@ import Row from "react-bootstrap/Row";
 import BaseAction from "./BaseAction";
 import BaseLabel from "./BaseLabel";
 import TextInput from "./TextInput";
-import { TextElementProps, DEFAULT_ELEMENT_CLASS_NAME } from "./PropTypes";
+import {
+    BaseActionProps,
+    BaseLabelProps,
+    TextElementProps,
+    TextInputProps,
+    DEFAULT_ELEMENT_CLASS_NAME
+} from "./PropTypes";
 
 // Component Details --------------------------------------------------------
 
@@ -25,9 +31,9 @@ const TextElement = (props: TextElementProps) => {
         <>
             <Row
                 className={props.elementClassName ? props.elementClassName : DEFAULT_ELEMENT_CLASS_NAME}>
-                <BaseLabel {...props}/>
-                <TextInput {...props}/>
-                <BaseAction {...props}/>
+                <BaseLabel {...props as BaseLabelProps}/>
+                <TextInput {...props as TextInputProps}/>
+                <BaseAction {...props as BaseActionProps}/>
             </Row>
         </>
     )
