@@ -32,7 +32,8 @@ export const CheckboxInput = (props: CheckboxInputProps) => {
                     onBlur={props.onBlur ? props.onBlur : undefined}
                     onChange={props.onChange ? props.onChange : undefined}
                     onFocus={props.onFocus ? props.onFocus : undefined}
-                    onKeyDown={props.onKeyDown ? props.onKeyDown : undefined}
+                    readOnly={props.readOnly ? props.readOnly : undefined}
+                    required={props.required ? props.required : undefined}
                     type="checkbox"
                 />
                 {props.label ? (

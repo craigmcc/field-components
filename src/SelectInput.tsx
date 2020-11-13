@@ -29,6 +29,8 @@ export const SelectInput = (props: SelectInputProps) => {
                     onBlur={props.onBlur ? props.onBlur : undefined}
                     onChange={props.onChange ? props.onChange : undefined}
                     onFocus={props.onFocus ? props.onFocus : undefined}
+                    // readOnly={props.readOnly ? props.readOnly : undefined}
+                    required={props.required ? props.required : undefined}
                     value={props.fieldValue ? props.fieldValue : ""}
                 >
                     {props.options.map(option => (

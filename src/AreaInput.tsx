@@ -1,8 +1,6 @@
-// TextInput -----------------------------------------------------------------
+// AreaInput -----------------------------------------------------------------
 
-// Renders the <Col> component for a text input control.  Supports extended types
-// like "date" and "time" on modern browsers, but applications should provide
-// appropriate fallback behaviors on older ones.
+// Renders the <Col> component for a textarea input control.
 
 // External Modules ----------------------------------------------------------
 
@@ -11,36 +9,31 @@ import Col from "react-bootstrap/Col";
 
 // Internal Modules ----------------------------------------------------------
 
-import { TextInputProps, DEFAULT_INPUT_CLASS_NAME } from "./PropTypes";
+import { AreaInputProps, DEFAULT_INPUT_CLASS_NAME } from "./PropTypes";
 
 // Component Details ---------------------------------------------------------
 
-export const TextInput = (props: TextInputProps) => {
+export const AreaInput = (props: AreaInputProps) => {
 
-    const FIELD_NAME = (props.fieldName ? props.fieldName : "text");
+    const FIELD_NAME = (props.fieldName ? props.fieldName : "area");
 
     return (
         <>
             <Col className={props.fieldClassName ? props.fieldClassName : DEFAULT_INPUT_CLASS_NAME}>
-                <input
+                <textarea
                     autoFocus={props.autoFocus ? props.autoFocus : undefined}
                     className={props.inputClassName ? props.inputClassName : "form-control"}
+                    cols={props.cols ? props.cols : undefined}
                     disabled={props.fieldDisabled ? props.fieldDisabled : undefined}
                     id={props.fieldName ? props.fieldName : FIELD_NAME}
-                    max={props.max ? props.max : undefined}
-                    maxLength={props.maxLength ? props.maxLength : undefined}
-                    min={props.min ? props.min : undefined}
-                    minLength={props.minLength ? props.minLength : undefined}
                     name={props.fieldName ? props.fieldName : FIELD_NAME}
                     onBlur={props.onBlur ? props.onBlur : undefined}
                     onChange={props.onChange ? props.onChange : undefined}
                     onFocus={props.onFocus ? props.onFocus : undefined}
-                    onKeyDown={props.onKeyDown ? props.onKeyDown : undefined}
-                    pattern={props.pattern ? props.pattern : undefined}
                     placeholder={props.placeholder ? props.placeholder : undefined}
                     readOnly={props.readOnly ? props.readOnly : undefined}
                     required={props.required ? props.required : undefined}
-                    type={props.type ? props.type : "text"}
+                    rows={props.rows ? props.rows : undefined}
                     value={props.fieldValue ? props.fieldValue : ""}
                 />
             </Col>
@@ -49,4 +42,4 @@ export const TextInput = (props: TextInputProps) => {
 
 }
 
-export default TextInput;
+export default AreaInput;

@@ -1,6 +1,8 @@
 // Project-Level Exports
 
 export { ActionButton } from "./src/ActionButton";
+export { AreaElement } from "./src/AreaElement";
+export { AreaInput } from "./src/AreaInput";
 export { BaseAction } from "./src/BaseAction";
 export { BaseLabel } from "./src/BaseLabel";
 export { CheckboxElement } from "./src/CheckboxElement";

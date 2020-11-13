@@ -19,6 +19,25 @@ export interface ActionButtonProps {
     variant?: Variant;          // Style variant [warning]
 }
 
+// Props specific to an AreaElement <Row> component.
+export interface AreaElementProps
+    extends AreaInputProps, BaseActionProps, BaseElementProps, BaseLabelProps  {
+}
+
+// Props specific to an AreaInput <Col> component.
+export interface AreaInputProps extends BaseInputProps {
+    cols?: number               // Visible width (in characters) [not rendered]
+    fieldValue?: string;        // Initially displayed field value [not rendered]
+    inputClassName?: string;    // CSS styles for input field [form-control]
+    maxLength?: number;         // Maximum characters allowed [not rendered]
+    minLength?: number;         // Minimum characters allowed [not rendered]
+    onChange?(event: OnAreaEvent) : void;
+                                // Handle (event) for field being changed [not rendered]
+    placeholder?: string;       // Placeholder text for no value [not rendered]
+    required?: boolean;         // Mark field as required? [not rendered]
+    rows?: number               // Visible height (in rows) [not rendered]
+}
+
 // Props common to all "Action" <Col> components.
 export interface BaseActionProps {
     action?: string;            // Action button text [no <Col> is rendered]
@@ -29,6 +48,7 @@ export interface BaseActionProps {
     actionVariant: Variant;     // Action button style variant [not rendered]
     onClick?(event: OnClickEvent) : void;
                                 // Handle (event) for button click [not rendered]
+    required?: boolean;         // Mark field as required? [not rendered]
 }
 
 // Props common to all "Element" <Row> components.
@@ -49,9 +69,8 @@ export interface BaseInputProps {
                                 // Handle (event) for losing focus [not rendered]
     onFocus?(event: OnFocusEvent) : void;
                                 // Handle (event) for gaining focus [not rendered]
-    onKeyDown?(event: OnKeyDownEvent) : void;
-                                // Handle (event) for field being typed in [not rendered]
-
+    readOnly?: boolean;         // Mark control as read only? [false]
+    required?: boolean;         // Mark field as required? [not rendered]
 }
 
 // Props common to all "Label" <Col> components.
@@ -104,9 +123,10 @@ export interface TextInputProps extends BaseInputProps {
     minLength?: number;         // Minimum characters allowed [not rendered]
     onChange?(event: OnChangeEvent) : void;
                                 // Handle (event) for field being changed [not rendered]
+    onKeyDown?(event: OnKeyDownEvent) : void;
+                                // Handle (event) for field being typed in [not rendered]
     pattern?: string;           // Regular expression match allowed [not rendered]
     placeholder?: string;       // Placeholder text for no value [not rendered]
-    required?: boolean;         // Mark field as required? [not rendered]
     type?: string;              // Input control type [text]
 }
 
@@ -116,6 +136,7 @@ export interface TextInputProps extends BaseInputProps {
 type ButtonSize = "lg" | "sm";
 type ButtonType = "button" | "reset" | "submit";
 type OnBlurEvent = React.FocusEvent<HTMLElement>;
+type OnAreaEvent = React.ChangeEvent<HTMLTextAreaElement>; // onChange for a <textarea>
 type OnChangeEvent = React.ChangeEvent<HTMLInputElement>;
 type OnClickEvent = React.MouseEvent<HTMLElement, MouseEvent>;
 type OnFocusEvent = React.FocusEvent<HTMLElement>;
