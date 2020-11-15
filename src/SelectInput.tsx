@@ -9,7 +9,8 @@ import Col from "react-bootstrap/Col";
 
 // Internal Modules ----------------------------------------------------------
 
-import { SelectInputProps, DEFAULT_INPUT_CLASS_NAME } from "./PropTypes";
+import { DEFAULT_INPUT_CLASS_NAME } from "./Constants";
+import { SelectInputProps } from "./PropTypes";
 
 // Component Details ---------------------------------------------------------
 
@@ -44,5 +45,3 @@ export const SelectInput = (props: SelectInputProps) => {
     )
 
 }
-
-export default SelectInput;

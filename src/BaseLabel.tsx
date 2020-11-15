@@ -10,7 +10,8 @@ import Col from "react-bootstrap/Col";
 
 // Internal Modules ----------------------------------------------------------
 
-import { BaseLabelProps, DEFAULT_LABEL_CLASS_NAME } from "./PropTypes";
+import { DEFAULT_LABEL_CLASS_NAME } from "./Constants";
+import { BaseLabelProps } from "./PropTypes";
 
 // Component Details ---------------------------------------------------------
 
@@ -29,5 +30,3 @@ export const BaseLabel = (props: BaseLabelProps) => {
     )
 
 }
-
-export default BaseLabel;

@@ -150,8 +150,3 @@ type SelectOptions = SelectOption[];
 type Variant = "primary" | "secondary" | "success" | "warning" | "danger"
     | "info" | "light" | "dark";
 
-// Default className values for <Row> and <Col> components
-export const DEFAULT_ELEMENT_CLASS_NAME = "mb-1 col-12";
-export const DEFAULT_INPUT_CLASS_NAME = "col-9";
-export const DEFAULT_LABEL_CLASS_NAME = "col-3";
-

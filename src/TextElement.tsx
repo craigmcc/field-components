@@ -12,20 +12,20 @@ import Row from "react-bootstrap/Row";
 
 // Internal Modules ----------------------------------------------------------
 
-import BaseAction from "./BaseAction";
-import BaseLabel from "./BaseLabel";
-import TextInput from "./TextInput";
+import { BaseAction } from "./BaseAction";
+import { BaseLabel } from "./BaseLabel";
+import { DEFAULT_ELEMENT_CLASS_NAME } from "./Constants";
+import { TextInput } from "./TextInput";
 import {
     BaseActionProps,
     BaseLabelProps,
     TextElementProps,
     TextInputProps,
-    DEFAULT_ELEMENT_CLASS_NAME
 } from "./PropTypes";
 
 // Component Details --------------------------------------------------------
 
-const TextElement = (props: TextElementProps) => {
+export const TextElement = (props: TextElementProps) => {
 
     return (
         <>
@@ -39,5 +39,3 @@ const TextElement = (props: TextElementProps) => {
     )
 
 }
-
-export default TextElement;

@@ -10,7 +10,7 @@ import Col from "react-bootstrap/Col";
 
 // Internal Modules ----------------------------------------------------------
 
-import ActionButton from "./ActionButton";
+import { ActionButton } from "./ActionButton";
 import { ActionButtonProps, BaseActionProps } from "./PropTypes";
 
 // Component Details ---------------------------------------------------------
@@ -37,5 +37,3 @@ export const BaseAction = (props: BaseActionProps) => {
     )
 
 }
-
-export default BaseAction;

@@ -12,20 +12,20 @@ import Row from "react-bootstrap/Row";
 
 // Internal Modules ----------------------------------------------------------
 
-import BaseAction from "./BaseAction";
-import CheckboxInput from "./CheckboxInput";
-import CheckboxLabel from "./CheckboxLabel";
+import { BaseAction } from "./BaseAction";
+import { CheckboxInput } from "./CheckboxInput";
+import { CheckboxLabel } from "./CheckboxLabel";
+import { DEFAULT_ELEMENT_CLASS_NAME } from "./Constants";
 import {
     BaseActionProps,
     BaseLabelProps,
     CheckboxElementProps,
     CheckboxInputProps,
-    DEFAULT_ELEMENT_CLASS_NAME
 } from "./PropTypes";
 
 // Component Details --------------------------------------------------------
 
-const CheckboxElement = (props: CheckboxElementProps) => {
+export const CheckboxElement = (props: CheckboxElementProps) => {
 
     return (
         <>
@@ -39,5 +39,3 @@ const CheckboxElement = (props: CheckboxElementProps) => {
     )
 
 }
-
-export default CheckboxElement;

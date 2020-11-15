@@ -12,20 +12,20 @@ import Row from "react-bootstrap/Row";
 
 // Internal Modules ----------------------------------------------------------
 
-import AreaInput from "./AreaInput";
-import BaseAction from "./BaseAction";
-import BaseLabel from "./BaseLabel";
+import { AreaInput } from "./AreaInput";
+import { BaseAction } from "./BaseAction";
+import { BaseLabel } from "./BaseLabel";
+import { DEFAULT_ELEMENT_CLASS_NAME } from "./Constants";
 import {
     AreaElementProps,
     AreaInputProps,
     BaseActionProps,
     BaseLabelProps,
-    DEFAULT_ELEMENT_CLASS_NAME
 } from "./PropTypes";
 
 // Component Details --------------------------------------------------------
 
-const AreaElement = (props: AreaElementProps) => {
+export const AreaElement = (props: AreaElementProps) => {
 
     return (
         <>
@@ -39,5 +39,3 @@ const AreaElement = (props: AreaElementProps) => {
     )
 
 }
-
-export default AreaElement;

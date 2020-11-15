@@ -9,7 +9,8 @@ import Col from "react-bootstrap/Col";
 
 // Internal Modules ----------------------------------------------------------
 
-import { AreaInputProps, DEFAULT_INPUT_CLASS_NAME } from "./PropTypes";
+import { DEFAULT_INPUT_CLASS_NAME } from "./Constants";
+import { AreaInputProps } from "./PropTypes";
 
 // Component Details ---------------------------------------------------------
 
@@ -41,5 +42,3 @@ export const AreaInput = (props: AreaInputProps) => {
     )
 
 }
-
-export default AreaInput;

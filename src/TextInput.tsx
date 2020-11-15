@@ -11,7 +11,8 @@ import Col from "react-bootstrap/Col";
 
 // Internal Modules ----------------------------------------------------------
 
-import { TextInputProps, DEFAULT_INPUT_CLASS_NAME } from "./PropTypes";
+import { DEFAULT_INPUT_CLASS_NAME } from "./Constants";
+import { TextInputProps } from "./PropTypes";
 
 // Component Details ---------------------------------------------------------
 
@@ -48,5 +49,3 @@ export const TextInput = (props: TextInputProps) => {
     )
 
 }
-
-export default TextInput;

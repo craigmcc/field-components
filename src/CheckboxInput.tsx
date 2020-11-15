@@ -11,7 +11,8 @@ import Col from "react-bootstrap/Col";
 
 // Internal Modules ----------------------------------------------------------
 
-import { CheckboxInputProps, DEFAULT_INPUT_CLASS_NAME } from "./PropTypes";
+import { DEFAULT_INPUT_CLASS_NAME } from "./Constants";
+import { CheckboxInputProps } from "./PropTypes";
 
 // Component Details ---------------------------------------------------------
 
@@ -46,5 +47,3 @@ export const CheckboxInput = (props: CheckboxInputProps) => {
     )
 
 }
-
-export default CheckboxInput;

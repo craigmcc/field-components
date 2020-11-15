@@ -30,5 +30,3 @@ export const ActionButton = (props: ActionButtonProps) => {
     )
 
 }
-
-export default ActionButton;
