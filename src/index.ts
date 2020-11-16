@@ -9,7 +9,7 @@ export { CheckboxElement } from "./CheckboxElement";
 export { CheckboxInput } from "./CheckboxInput";
 export { CheckboxLabel } from "./CheckboxLabel";
 export * as Constants from "./Constants";
-// PropTypes is purely for Typescript, so no need to export
+export * as PropTypes from "./PropTypes";
 export { SelectElement } from "./SelectElement";
 export { SelectInput } from "./SelectInput";
 export { TextElement } from "./TextElement";

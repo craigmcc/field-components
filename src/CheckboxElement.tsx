@@ -30,7 +30,8 @@ export const CheckboxElement = (props: CheckboxElementProps) => {
     return (
         <>
             <Row
-                className={props.elementClassName ? props.elementClassName : DEFAULT_ELEMENT_CLASS_NAME}>
+                className={props.elementClassName ? props.elementClassName : DEFAULT_ELEMENT_CLASS_NAME}
+            >
                 <CheckboxLabel {...props as BaseLabelProps}/>
                 <CheckboxInput {...props as CheckboxInputProps}/>
                 <BaseAction {...props as BaseActionProps}/>

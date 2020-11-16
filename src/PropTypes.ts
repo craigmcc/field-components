@@ -45,7 +45,7 @@ export interface BaseActionProps {
     actionDisabled?: boolean;   // Mark action button disabled? [not rendered]
     actionSize?: ButtonSize;    // Action button size [sm]
     actionType?: ButtonType;    // Action button type [button]
-    actionVariant: Variant;     // Action button style variant [not rendered]
+    actionVariant?: Variant;    // Action button style variant [not rendered]
     onClick?(event: OnClickEvent) : void;
                                 // Handle (event) for button click [not rendered]
     required?: boolean;         // Mark field as required? [not rendered]
@@ -133,20 +133,20 @@ export interface TextInputProps extends BaseInputProps {
 // Private Definitions -------------------------------------------------------
 
 // Detailed property types for non-basic properties
-type ButtonSize = "lg" | "sm";
-type ButtonType = "button" | "reset" | "submit";
-type OnBlurEvent = React.FocusEvent<HTMLElement>;
-type OnAreaEvent = React.ChangeEvent<HTMLTextAreaElement>; // onChange for a <textarea>
-type OnChangeEvent = React.ChangeEvent<HTMLInputElement>;
-type OnClickEvent = React.MouseEvent<HTMLElement, MouseEvent>;
-type OnFocusEvent = React.FocusEvent<HTMLElement>;
-type OnKeyDownEvent = React.KeyboardEvent<HTMLInputElement>;
-type OnSelectEvent = React.ChangeEvent<HTMLSelectElement>; // onChange for a <select>
-type SelectOption = {
+export type ButtonSize = "lg" | "sm";
+export type ButtonType = "button" | "reset" | "submit";
+export type OnBlurEvent = React.FocusEvent<HTMLElement>;
+export type OnAreaEvent = React.ChangeEvent<HTMLTextAreaElement>; // onChange for a <textarea>
+export type OnChangeEvent = React.ChangeEvent<HTMLInputElement>;
+export type OnClickEvent = React.MouseEvent<HTMLElement, MouseEvent>;
+export type OnFocusEvent = React.FocusEvent<HTMLElement>;
+export type OnKeyDownEvent = React.KeyboardEvent<HTMLInputElement>;
+export type OnSelectEvent = React.ChangeEvent<HTMLSelectElement>; // onChange for a <select>
+export type SelectOption = {
     label: string;              // Label shown for this option [*REQUIRED*]
     value: string;              // Value returned for this option [*REQUIRED*]
 }
-type SelectOptions = SelectOption[];
-type Variant = "primary" | "secondary" | "success" | "warning" | "danger"
+export type SelectOptions = SelectOption[];
+export type Variant = "primary" | "secondary" | "success" | "warning" | "danger"
     | "info" | "light" | "dark";
 

@@ -30,7 +30,8 @@ export const TextElement = (props: TextElementProps) => {
     return (
         <>
             <Row
-                className={props.elementClassName ? props.elementClassName : DEFAULT_ELEMENT_CLASS_NAME}>
+                className={props.elementClassName ? props.elementClassName : DEFAULT_ELEMENT_CLASS_NAME}
+            >
                 <BaseLabel {...props as BaseLabelProps}/>
                 <TextInput {...props as TextInputProps}/>
                 <BaseAction {...props as BaseActionProps}/>

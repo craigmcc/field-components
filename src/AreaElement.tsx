@@ -30,7 +30,8 @@ export const AreaElement = (props: AreaElementProps) => {
     return (
         <>
             <Row
-                className={props.elementClassName ? props.elementClassName : DEFAULT_ELEMENT_CLASS_NAME}>
+                className={props.elementClassName ? props.elementClassName : DEFAULT_ELEMENT_CLASS_NAME}
+            >
                 <BaseLabel {...props as BaseLabelProps}/>
                 <AreaInput {...props as AreaInputProps}/>
                 <BaseAction {...props as BaseActionProps}/>

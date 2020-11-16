@@ -30,7 +30,8 @@ export const SelectElement = (props: SelectElementProps) => {
     return (
         <>
             <Row
-                className={props.elementClassName ? props.elementClassName : DEFAULT_ELEMENT_CLASS_NAME}>
+                className={props.elementClassName ? props.elementClassName : DEFAULT_ELEMENT_CLASS_NAME}
+            >
                 <BaseLabel {...props as BaseLabelProps}/>
                 <SelectInput {...props as SelectInputProps}/>
                 <BaseAction {...props as BaseActionProps}/>
