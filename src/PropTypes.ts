@@ -13,8 +13,7 @@ export interface ActionButtonProps {
     autoFocus?: boolean;        // Set automatic focus on this element? [false]
     disabled?: boolean;         // Mark button disabled? [not rendered]
     label?: string;             // Button label [Action]
-    onClick?(event: OnClickEvent) : void;
-                                // Handle (event) for button click [not rendered]
+    onClick?: OnClick;          // Handle (event) for button click [not rendered]
     size?: ButtonSize;          // Size of this button [sm]
     type?: ButtonType;          // Type of this button [button]
     variant?: Variant;          // Style variant [warning]
@@ -48,8 +47,7 @@ export interface BaseActionProps {
     actionType?: ButtonType;    // Action button type [button]
     actionVariant?: Variant;    // Action button style variant [not rendered]
     autoFocus?: boolean;        // Set automatic focus on this element? [false]
-    onClick?(event: OnClickEvent) : void;
-                                // Handle (event) for button click [not rendered]
+    onClick?: OnClick;          // Handle (event) for button click [not rendered]
     required?: boolean;         // Mark field as required? [not rendered]
 }
 
@@ -133,6 +131,9 @@ export interface TextInputProps extends BaseInputProps {
 }
 
 // Private Definitions -------------------------------------------------------
+
+// Handlers for specific event types
+export type OnClick = (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 
 // Detailed property types for non-basic properties
 export type ButtonSize = "lg" | "sm";

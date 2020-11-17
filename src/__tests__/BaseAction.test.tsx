@@ -12,7 +12,7 @@ import "@testing-library/jest-dom";
 // Internal Modules ----------------------------------------------------------
 
 import { BaseAction } from "../../src/BaseAction";
-import {BaseActionProps, OnClickEvent} from "../../src/PropTypes";
+import { BaseActionProps } from "../../src/PropTypes";
 
 // Test Globals --------------------------------------------------------------
 

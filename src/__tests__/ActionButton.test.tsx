@@ -5,13 +5,13 @@
 // External Modules ----------------------------------------------------------
 
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import {  fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 // Internal Modules ----------------------------------------------------------
 
 import { ActionButton } from "../../src/ActionButton";
-import {ActionButtonProps, OnClickEvent} from "../../src/PropTypes";
+import { ActionButtonProps } from "../../src/PropTypes";
 
 // Test Globals --------------------------------------------------------------
 
@@ -47,7 +47,7 @@ describe("<ActionButton/>", () => {
         }
         renderComponent(testProps);
         const actionButton = screen.getByTestId(TEST_ID);
-//        console.log("Rendered <Button/> for <ActionButton/>");
+//        console.log("Rendered <ActionButton/>");
 //        screen.debug(actionButton);
         if (testProps.autoFocus) {
             // TODO - for some reason, <Button> does not emit autofocus
@@ -69,9 +69,28 @@ describe("<ActionButton/>", () => {
         }
         expect(actionButton).toHaveAttribute("type", testProps.type);
         expect(actionButton).toHaveTextContent("" + testProps.label);
-        // TODO - deal with onClick (and maybe make it required?)
 
     });
 
+    test("Render with onClick handler", () => {
+
+        const onClick = jest.fn();
+
+        const testProps: Partial<ActionButtonProps> = {
+            label: "Clickable Action",
+            onClick: onClick
+        }
+        renderComponent(testProps);
+        const actionButton = screen.getByTestId(TEST_ID);
+//        console.log("Rendered <ActionButton/> with onClick before");
+//        screen.debug(actionButton);
+
+        fireEvent.click(actionButton);
+        screen.debug(actionButton);
+//        console.log("Rendered <ActionButton/> with onClick before");
+//        screen.debug(actionButton);
+        expect(onClick).toHaveBeenCalled();
+
+    })
 
 });
