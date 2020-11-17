@@ -6,6 +6,7 @@
 
 import React from "react";
 import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
 // Internal Modules ----------------------------------------------------------
 
@@ -44,15 +45,13 @@ describe("<BaseLabel/>", () => {
         }
         renderComponent(testProps);
 
-        const baseLabelCol = screen.getByTestId(TEST_ID);
+        const col = screen.getByTestId(TEST_ID);
 //        console.log("Rendered <Col/> for <BaseLabel/> all");
-//        screen.debug(baseLabelCol);
-        // TODO - verify class includes {labelClassName}
-        // TODO - verify <label for={fieldName}/>
+//        screen.debug(col);
+        expect(col).toHaveClass("" + testProps.labelClassName);
 
-        const baseLabelLabel = screen.getByText("" + testProps.label);
-//        console.log("Rendered <label> for <BaseLabel/> all");
-//        screen.debug(baseLabelLabel);
+        const label = screen.getByText("" + testProps.label);
+        expect(label).toHaveAttribute("for", testProps.fieldName);
 
     });
 

@@ -10,6 +10,7 @@ import React from "react";
 // Interface Details ---------------------------------------------------------
 
 export interface ActionButtonProps {
+    autoFocus?: boolean;        // Set automatic focus on this element? [false]
     disabled?: boolean;         // Mark button disabled? [not rendered]
     label?: string;             // Button label [Action]
     onClick?(event: OnClickEvent) : void;
@@ -46,6 +47,7 @@ export interface BaseActionProps {
     actionSize?: ButtonSize;    // Action button size [sm]
     actionType?: ButtonType;    // Action button type [button]
     actionVariant?: Variant;    // Action button style variant [not rendered]
+    autoFocus?: boolean;        // Set automatic focus on this element? [false]
     onClick?(event: OnClickEvent) : void;
                                 // Handle (event) for button click [not rendered]
     required?: boolean;         // Mark field as required? [not rendered]
@@ -58,7 +60,7 @@ export interface BaseElementProps {
 
 // Props common to all "Input" <Col> components.
 export interface BaseInputProps {
-    autoFocus?: boolean;        // Set automatic focus on this field? [false]
+    autoFocus?: boolean;        // Set automatic focus on this element? [false]
     fieldClassName?: string;    // CSS styles for field <Col> [col-9]
     fieldDisabled?: boolean;    // Mark field as disabled? [false]
     fieldName: string;          // HTML field name [*REQUIRED*]

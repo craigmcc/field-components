@@ -18,6 +18,7 @@ export const ActionButton = (props: ActionButtonProps) => {
     return (
         <>
             <Button
+                autoFocus={props.autoFocus ? props.autoFocus : undefined}
                 data-testid="ActionButton"
                 disabled={props.disabled ? props.disabled : undefined}
                 onClick={props.onClick ? props.onClick : undefined}

@@ -7,6 +7,7 @@
 
 import React from "react";
 import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
 // Internal Modules ----------------------------------------------------------
 
@@ -39,7 +40,7 @@ describe("<BaseAction/>", () => {
 
         const testProps: Partial<BaseActionProps> = {
             action: "My Action",
-            actionClassName: "col-99",
+            actionClassName: "col-99 mr-1 mb-2",
             actionDisabled: true,
             actionSize: "lg",
             actionType: "button",
@@ -47,16 +48,13 @@ describe("<BaseAction/>", () => {
         }
         renderComponent(testProps);
 
-        const baseActionCol = screen.getByTestId(TEST_ID);
+        const col = screen.getByTestId(TEST_ID);
 //        console.log("Rendered <Col/> for <BaseAction/>");
-//        screen.debug(baseActionCol);
-        // TODO - verify class includes {actionClassName}
-        // TODO - verify disabled
-        // TODO - deal with passing on onClick (and maybe make it required?)
+//        screen.debug(col);
+        expect(col).toHaveClass("" + testProps.actionClassName);
 
-        const baseActionButton = screen.getByText("" + testProps.action);
-//        console.log("Rendered <ActionButton/> for <BaseAction/>");
-//        screen.debug(baseActionButton);
+        const actionButton = screen.getByText("" + testProps.action);
+        // This verifies existence, renaming tests for ActionButton are separate
 
     });
 
@@ -67,14 +65,13 @@ describe("<BaseAction/>", () => {
         }
         renderComponent(testProps);
 
-        const baseActionCol = screen.getByTestId(TEST_ID);
+        const col = screen.getByTestId(TEST_ID);
 //        console.log("Rendered <Col/> for <BaseAction/> minimum");
-//        screen.debug(baseActionCol);
-        // TODO - verify class not rendered?
+//        screen.debug(col);
+        expect(col).toHaveAttribute("class", "col"); // Nothing added
 
-        const baseActionButton = screen.getByText("" + testProps.action);
-//        console.log("Rendered <ActionButton/> for <BaseAction/>");
-//        screen.debug(baseActionButton);
+        const actionButton = screen.getByText("" + testProps.action);
+        // This verifies existence, renaming tests for ActionButton are separate
 
     });
 

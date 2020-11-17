@@ -18,6 +18,7 @@ import { ActionButtonProps, BaseActionProps } from "./PropTypes";
 export const BaseAction = (props: BaseActionProps) => {
 
     let actionButtonProps: ActionButtonProps = {
+        autoFocus: props.autoFocus,
         disabled: props.actionDisabled,
         label: props.action,
         onClick: props.onClick,

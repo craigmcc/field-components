@@ -6,6 +6,7 @@
 
 import React from "react";
 import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
 // Internal Modules ----------------------------------------------------------
 
@@ -37,7 +38,8 @@ describe("<ActionButton/>", () => {
     test("Render with all props", () => {
 
         const testProps: Partial<ActionButtonProps> = {
-            disabled: true,
+            autoFocus: false,
+            disabled: false,
             label: "My Action",
             size: "lg",
             type: "submit",
@@ -47,10 +49,26 @@ describe("<ActionButton/>", () => {
         const actionButton = screen.getByTestId(TEST_ID);
 //        console.log("Rendered <Button/> for <ActionButton/>");
 //        screen.debug(actionButton);
-
-        // TODO - verify class includes btn-{variant} and btn-{size}
-        // TODO - verify disabled
-        // TODO - verify type
+        if (testProps.autoFocus) {
+            // TODO - for some reason, <Button> does not emit autofocus
+            // expect(actionButton).toHaveAttribute("autofocus");
+            // TODO - but toHaveFocus() says yes in this case?
+            expect(actionButton).toHaveFocus();
+        } else {
+            expect(actionButton).not.toHaveAttribute("autofocus");
+            expect(actionButton).not.toHaveFocus();
+        }
+        expect(actionButton).toHaveClass("btn-" + testProps.variant);
+        expect(actionButton).toHaveClass("btn-" + testProps.size);
+        if (testProps.disabled) {
+            expect(actionButton).toHaveAttribute("disabled");
+            expect(actionButton).toBeDisabled();
+        } else {
+            expect(actionButton).not.toHaveAttribute("disabled");
+            expect(actionButton).not.toBeDisabled();
+        }
+        expect(actionButton).toHaveAttribute("type", testProps.type);
+        expect(actionButton).toHaveTextContent("" + testProps.label);
         // TODO - deal with onClick (and maybe make it required?)
 
     });
