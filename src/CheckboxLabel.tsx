@@ -21,7 +21,10 @@ export const CheckboxLabel = (props: BaseLabelProps) => {
     return (
         <>
             {props.label ? (
-                <Col className={props.labelClassName ? props.labelClassName : DEFAULT_LABEL_CLASS_NAME}>
+                <Col
+                    className={props.labelClassName ? props.labelClassName : DEFAULT_LABEL_CLASS_NAME}
+                    data-testid="CheckboxLabelCol"
+                >
                     {/* Label text will be rendered by CheckboxInput */}
                 </Col>
             ) : null }

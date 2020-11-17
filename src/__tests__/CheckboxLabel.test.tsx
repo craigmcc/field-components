@@ -10,13 +10,13 @@ import "@testing-library/jest-dom";
 
 // Internal Modules ----------------------------------------------------------
 
-import { BaseLabel } from "../../src/BaseLabel";
+import { CheckboxLabel } from "../../src/CheckboxLabel";
 import { DEFAULT_LABEL_CLASS_NAME } from "../Constants";
 import { BaseLabelProps } from "../../src/PropTypes";
 
 // Test Globals --------------------------------------------------------------
 
-const TEST_ID = "BaseLabelCol";
+const TEST_ID = "CheckboxLabelCol";
 
 const defaultProps: BaseLabelProps = {
     fieldName: "field"
@@ -24,7 +24,7 @@ const defaultProps: BaseLabelProps = {
 
 const renderComponent = (testProps: Partial<BaseLabelProps> = {}) => {
     return render(
-        <BaseLabel
+        <CheckboxLabel
             {...defaultProps}
             {...testProps}/>
     );
@@ -34,7 +34,7 @@ const renderComponent = (testProps: Partial<BaseLabelProps> = {}) => {
 
 // Test Suites ---------------------------------------------------------------
 
-describe("<BaseLabel/>", () => {
+describe("<CheckboxLabel/>", () => {
 
     test("Render with all props", () => {
 
@@ -46,12 +46,10 @@ describe("<BaseLabel/>", () => {
         renderComponent(testProps);
 
         const col = screen.getByTestId(TEST_ID);
-//        console.log("Rendered <Col/> for <BaseLabel/> all");
+//        console.log("Rendered <Col/> for <CheckboxLabel/> all");
 //        screen.debug(col);
         expect(col).toHaveClass("" + testProps.labelClassName);
-
-        const label = screen.getByText("" + testProps.label);
-        expect(label).toHaveAttribute("for", testProps.fieldName);
+        expect(col).toBeEmptyDOMElement();
 
     });
 
@@ -63,19 +61,17 @@ describe("<BaseLabel/>", () => {
         renderComponent(testProps);
 
         const col = screen.getByTestId(TEST_ID);
-//        console.log("Rendered <Col/> for <BaseLabel/> minimum");
+//        console.log("Rendered <Col/> for <CheckboxLabel/> minimum");
 //        screen.debug(col);
         expect(col).toHaveClass(DEFAULT_LABEL_CLASS_NAME);
-
-        const label = screen.getByText("" + testProps.label);
-        expect(label).toHaveAttribute("for", defaultProps.fieldName);
+        expect(col).toBeEmptyDOMElement();
 
     });
 
     test("Render with no label prop", () => {
 
         const { queryByTestId } = renderComponent({});
-//        console.info("Rendered <BaseLabel/> with no label prop:");
+//        console.info("Rendered <CheckboxLabel/> with no label prop:");
 //        screen.debug();
 
         expect(queryByTestId(TEST_ID)).toBeNull();
