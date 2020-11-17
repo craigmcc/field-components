@@ -18,6 +18,7 @@ export const ActionButton = (props: ActionButtonProps) => {
     return (
         <>
             <Button
+                data-testid="ActionButton"
                 disabled={props.disabled ? props.disabled : undefined}
                 onClick={props.onClick ? props.onClick : undefined}
                 size={props.size ? props.size : undefined}

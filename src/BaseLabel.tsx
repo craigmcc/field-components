@@ -20,7 +20,10 @@ export const BaseLabel = (props: BaseLabelProps) => {
     return (
         <>
             {props.label ? (
-                <Col className={props.labelClassName ? props.labelClassName : DEFAULT_LABEL_CLASS_NAME}>
+                <Col
+                    className={props.labelClassName ? props.labelClassName : DEFAULT_LABEL_CLASS_NAME}
+                    data-testid="BaseLabelCol"
+                >
                     <label htmlFor={props.fieldName ? props.fieldName : "label"}>
                         {props.label}
                     </label>

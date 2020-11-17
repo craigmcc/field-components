@@ -29,7 +29,10 @@ export const BaseAction = (props: BaseActionProps) => {
     return (
         <>
             {props.action ? (
-                <Col className={props.actionClassName ? props.actionClassName : undefined}>
+                <Col
+                    className={props.actionClassName ? props.actionClassName : undefined}
+                    data-testid="BaseActionCol"
+                >
                     <ActionButton {... actionButtonProps}/>
                 </Col>
             ) : null }
