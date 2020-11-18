@@ -24,6 +24,15 @@ export interface BaseActionProps {
     required?: boolean;         // Mark field as required? [not rendered]
 }
 
+export interface BaseAreaProps extends BaseInputProps {
+    cols?: number               // Visible width (in characters) [not rendered]
+    maxLength?: number;         // Maximum characters allowed [not rendered]
+    minLength?: number;         // Minimum characters allowed [not rendered]
+    onKeyDown?: OnKeyDown;      // Handle (event) on a key down [not rendered]
+    placeholder?: string;       // Placeholder text for no value [not rendered]
+    rows?: number               // Visible height (in rows) [not rendered]
+}
+
 export interface BaseElementProps {
     elementClassName?: string;  // CSS styles for element <Row> [DEFAULT_ELEMENT_CLASS_NAME]
 }
@@ -58,7 +67,7 @@ export interface BaseTextProps extends BaseInputProps {
     onKeyDown?: OnKeyDown;      // Handle (event) on a key down [not rendered]
     pattern?: string;           // Regular expression match allowed [not rendered]
     placeholder?: string;       // Placeholder text for no value [not rendered]
-    type?: string;              // Input control type [text] (ignored on a textarea)
+    type?: string;              // Input control type [text]
 }
 
 // Detailed Field Types ------------------------------------------------------
@@ -67,7 +76,8 @@ export type ButtonSize = "lg" | "sm";
 export type ButtonType = "button" | "reset" | "submit";
 export type SelectOption = {
     label: string;              // Label shown for this option [*REQUIRED*]
-    value: string;              // Value returned for this option [*REQUIRED*]
+    value: string | number;     // Value returned for this option [*REQUIRED*]
+                                // (will be rendered as a string)
 }
 export type SelectOptions = SelectOption[];
 export type Variant = "primary" | "secondary" | "success" | "warning" | "danger"

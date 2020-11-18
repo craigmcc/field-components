@@ -13,14 +13,15 @@ import Row from "react-bootstrap/Row";
 // Internal Modules ----------------------------------------------------------
 
 import { BaseAction, Props as BaseActionProps } from "./BaseAction";
+import { Props as BaseElementProps } from "./BaseElement";
 import { BaseLabel, Props as BaseLabelProps } from "./BaseLabel";
 import { DEFAULT_ELEMENT_CLASS_NAME } from "./Constants";
 import { SelectInput, Props as SelectInputProps } from "./SelectInput";
-import { BaseElementProps } from "./Types";
 
 // Property Details ---------------------------------------------------------
 
-export interface Props extends BaseElementProps {
+export interface Props extends
+    BaseActionProps, BaseElementProps, BaseLabelProps, SelectInputProps {
 }
 
 // Component Details --------------------------------------------------------
@@ -31,7 +32,7 @@ export const SelectElement = (props: Props) => {
         <>
             <Row
                 className={props.elementClassName ? props.elementClassName : DEFAULT_ELEMENT_CLASS_NAME}
-                data-testid="SelectElement"
+                data-testid="SelectElementRow"
             >
                 <BaseLabel {...props as BaseLabelProps}/>
                 <SelectInput {...props as SelectInputProps}/>

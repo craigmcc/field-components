@@ -32,7 +32,7 @@ export const AreaElement = (props: Props) => {
         <>
             <Row
                 className={props.elementClassName ? props.elementClassName : DEFAULT_ELEMENT_CLASS_NAME}
-                data-testid="AreaElement"
+                data-testid="AreaElementRow"
             >
                 <BaseLabel {...props as BaseLabelProps}/>
                 <AreaInput {...props as AreaInputProps}/>

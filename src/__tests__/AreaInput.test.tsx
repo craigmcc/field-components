@@ -41,6 +41,11 @@ const onFocus = (event: React.FocusEvent): void => {
 }
 let onFocusCount: number = 0;
 
+const onKeyDown = (event: React.KeyboardEvent): void => {
+    onKeyDownCount++;
+}
+let onKeyDownCount = 0;
+
 const renderComponent = (testProps: Partial<AreaInputProps> = {}) => {
     return render(
         <AreaInput
@@ -93,6 +98,12 @@ const testAttributes = (testProps: Partial<AreaInputProps>, areaInputCol: HTMLEl
     if (testProps.fieldValue) {
         expect(areaInput).toHaveValue(testProps.fieldValue);
     }
+    if (testProps.maxLength) {
+        expect(areaInput).toHaveAttribute("maxLength", "" + testProps.maxLength);
+    }
+    if (testProps.minLength) {
+        expect(areaInput).toHaveAttribute("minLength", "" + testProps.minLength);
+    }
     if (testProps.readOnly) {
         expect(areaInput).toHaveAttribute("readonly");
     } else {
@@ -138,6 +149,10 @@ const testEvents = (testProps: Partial<AreaInputProps>, areaInputCol: HTMLElemen
         fireEvent.focus(areaInput);
         expect(onFocusCount).toBe(1);
     }
+    if (testProps.onKeyDown) {
+        fireEvent.keyDown(areaInput);
+        expect(onKeyDownCount).toBe(1);
+    }
 
 }
 
@@ -147,6 +162,7 @@ beforeEach(() => {
     onBlurCount = 0;
     onChangeCount = 0;
     onFocusCount = 0;
+    onKeyDownCount = 0;
 });
 
 // Test Suites ---------------------------------------------------------------
@@ -183,11 +199,12 @@ describe("<AreaInput/>", () => {
             onBlur: onBlur,
             onChange: onChange,
             onFocus: onFocus,
+            onKeyDown: onKeyDown,
         }
         renderComponent(testProps);
 
         const areaInputCol = screen.getByTestId(TEST_ID);
-//        console.log("Rendered <AreaInput/> all");
+//        console.log("Rendered <AreaInput/> events");
 //        screen.debug(areaInputCol);
         testEvents(testProps, areaInputCol);
 

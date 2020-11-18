@@ -27,7 +27,10 @@ export const TextInput = (props: Props) => {
 
     return (
         <>
-            <Col className={props.fieldClassName ? props.fieldClassName : DEFAULT_INPUT_CLASS_NAME}>
+            <Col
+                className={props.fieldClassName ? props.fieldClassName : DEFAULT_INPUT_CLASS_NAME}
+                data-testid="TextInputCol"
+            >
                 <input
                     autoFocus={props.autoFocus ? props.autoFocus : undefined}
                     className={props.controlClassName ? props.controlClassName : DEFAULT_CONTROL_CLASS_NAME}

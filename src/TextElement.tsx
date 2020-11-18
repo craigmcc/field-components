@@ -32,7 +32,7 @@ export const TextElement = (props: Props) => {
         <>
             <Row
                 className={props.elementClassName ? props.elementClassName : DEFAULT_ELEMENT_CLASS_NAME}
-                data-testid="TextElement"
+                data-testid="TextElementRow"
             >
                 <BaseLabel {...props as BaseLabelProps}/>
                 <TextInput {...props as TextInputProps}/>

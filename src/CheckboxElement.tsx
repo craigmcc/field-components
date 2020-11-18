@@ -32,7 +32,7 @@ export const CheckboxElement = (props: Props) => {
         <>
             <Row
                 className={props.elementClassName ? props.elementClassName : DEFAULT_ELEMENT_CLASS_NAME}
-                data-testid="CheckboxElement"
+                data-testid="CheckboxElementRow"
             >
                 <CheckboxLabel {...props as CheckboxLabelProps}/>
                 <CheckboxInput {...props as CheckboxInputProps}/>

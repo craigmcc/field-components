@@ -10,13 +10,11 @@ import Col from "react-bootstrap/Col";
 // Internal Modules ----------------------------------------------------------
 
 import { DEFAULT_CONTROL_CLASS_NAME, DEFAULT_INPUT_CLASS_NAME } from "./Constants";
-import { BaseTextProps } from "./Types";
+import { BaseAreaProps } from "./Types";
 
 // Property Details ----------------------------------------------------------
 
-export interface Props extends BaseTextProps {
-    cols?: number               // Visible width (in characters) [not rendered]
-    rows?: number               // Visible height (in rows) [not rendered]
+export interface Props extends BaseAreaProps {
 }
 
 // Component Details ---------------------------------------------------------
@@ -37,10 +35,13 @@ export const AreaInput = (props: Props) => {
                     cols={props.cols ? props.cols : undefined}
                     disabled={props.fieldDisabled ? props.fieldDisabled : undefined}
                     id={props.fieldName ? props.fieldName : FIELD_NAME}
+                    maxLength={props.maxLength ? props.maxLength : undefined}
+                    minLength={props.minLength ? props.minLength : undefined}
                     name={props.fieldName ? props.fieldName : FIELD_NAME}
                     onBlur={props.onBlur ? props.onBlur : undefined}
                     onChange={props.onChange ? props.onChange : undefined}
                     onFocus={props.onFocus ? props.onFocus : undefined}
+                    onKeyDown={props.onKeyDown ? props.onKeyDown: undefined}
                     placeholder={props.placeholder ? props.placeholder : undefined}
                     readOnly={props.readOnly ? props.readOnly : undefined}
                     required={props.required ? props.required : undefined}

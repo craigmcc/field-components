@@ -29,11 +29,14 @@ export const CheckboxInput = (props: Props) => {
 
     return (
         <>
-            <Col className={props.fieldClassName ? props.fieldClassName : DEFAULT_INPUT_CLASS_NAME}>
+            <Col
+                className={props.fieldClassName ? props.fieldClassName : DEFAULT_INPUT_CLASS_NAME}
+                data-testid="CheckboxInputCol"
+            >
                 <input
                     autoFocus={props.autoFocus ? props.autoFocus : undefined}
                     checked={props.fieldValue ? props.fieldValue : undefined}
-                    className={props.controlClassName ? props.controlClassName : "mr-2"}
+                    className={props.controlClassName ? props.controlClassName : DEFAULT_CONTROL_CLASS_NAME + " mr-2"}
                     disabled={props.fieldDisabled ? props.fieldDisabled : undefined}
                     id={props.fieldName ? props.fieldName : FIELD_NAME}
                     name={props.fieldName ? props.fieldName : FIELD_NAME}

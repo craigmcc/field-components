@@ -26,7 +26,10 @@ export const SelectInput = (props: Props) => {
 
     return (
         <>
-            <Col className={props.fieldClassName ? props.fieldClassName : DEFAULT_INPUT_CLASS_NAME}>
+            <Col
+                className={props.fieldClassName ? props.fieldClassName : DEFAULT_INPUT_CLASS_NAME}
+                data-testid="SelectInputCol"
+            >
                 <select
                     autoFocus={props.autoFocus ? props.autoFocus : undefined}
                     className={props.controlClassName ? props.controlClassName : DEFAULT_CONTROL_CLASS_NAME}
@@ -41,7 +44,7 @@ export const SelectInput = (props: Props) => {
                     value={props.fieldValue ? props.fieldValue : ""}
                 >
                     {props.options.map(option => (
-                        <option key={option.value} value={option.value}>
+                        <option key={option.value} value={"" + option.value}>
                             {option.label}
                         </option>
                     ))}
