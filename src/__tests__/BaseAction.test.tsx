@@ -11,8 +11,7 @@ import "@testing-library/jest-dom";
 
 // Internal Modules ----------------------------------------------------------
 
-import { BaseAction } from "../../src/BaseAction";
-import { BaseActionProps } from "../../src/PropTypes";
+import { BaseAction, Props as BaseActionProps } from "../../src/BaseAction";
 
 // Test Globals --------------------------------------------------------------
 

@@ -10,9 +10,8 @@ import "@testing-library/jest-dom";
 
 // Internal Modules ----------------------------------------------------------
 
-import { BaseLabel } from "../../src/BaseLabel";
+import { BaseLabel, Props as BaseLabelProps } from "../../src/BaseLabel";
 import { DEFAULT_LABEL_CLASS_NAME } from "../Constants";
-import { BaseLabelProps } from "../../src/PropTypes";
 
 // Test Globals --------------------------------------------------------------
 

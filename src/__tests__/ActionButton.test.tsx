@@ -10,8 +10,7 @@ import "@testing-library/jest-dom";
 
 // Internal Modules ----------------------------------------------------------
 
-import { ActionButton } from "../../src/ActionButton";
-import { ActionButtonProps } from "../../src/PropTypes";
+import { ActionButton, Props as ActionButtonProps } from "../../src/ActionButton";
 
 // Test Globals --------------------------------------------------------------
 
@@ -82,13 +81,7 @@ describe("<ActionButton/>", () => {
         }
         renderComponent(testProps);
         const actionButton = screen.getByTestId(TEST_ID);
-//        console.log("Rendered <ActionButton/> with onClick before");
-//        screen.debug(actionButton);
-
         fireEvent.click(actionButton);
-        screen.debug(actionButton);
-//        console.log("Rendered <ActionButton/> with onClick before");
-//        screen.debug(actionButton);
         expect(onClick).toHaveBeenCalled();
 
     })

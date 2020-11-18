@@ -10,12 +10,17 @@ import Col from "react-bootstrap/Col";
 
 // Internal Modules ----------------------------------------------------------
 
-import { ActionButton } from "./ActionButton";
-import { ActionButtonProps, BaseActionProps } from "./PropTypes";
+import { ActionButton, Props as ActionButtonProps } from "./ActionButton";
+import { BaseActionProps } from "./Types";
+
+// Property Details ----------------------------------------------------------
+
+export interface Props extends BaseActionProps {
+}
 
 // Component Details ---------------------------------------------------------
 
-export const BaseAction = (props: BaseActionProps) => {
+export const BaseAction = (props: Props) => {
 
     let actionButtonProps: ActionButtonProps = {
         autoFocus: props.autoFocus,

@@ -9,12 +9,18 @@ import Col from "react-bootstrap/Col";
 
 // Internal Modules ----------------------------------------------------------
 
-import { DEFAULT_INPUT_CLASS_NAME } from "./Constants";
-import { SelectInputProps } from "./PropTypes";
+import { DEFAULT_CONTROL_CLASS_NAME, DEFAULT_INPUT_CLASS_NAME } from "./Constants";
+import { BaseInputProps, SelectOptions } from "./Types";
+
+// Property Details ----------------------------------------------------------
+
+export interface Props extends BaseInputProps {
+    options: SelectOptions;     // Individual options for this control [*REQUIRED*]
+}
 
 // Component Details ---------------------------------------------------------
 
-export const SelectInput = (props: SelectInputProps) => {
+export const SelectInput = (props: Props) => {
 
     const FIELD_NAME = (props.fieldName ? props.fieldName : "select");
 
@@ -23,7 +29,7 @@ export const SelectInput = (props: SelectInputProps) => {
             <Col className={props.fieldClassName ? props.fieldClassName : DEFAULT_INPUT_CLASS_NAME}>
                 <select
                     autoFocus={props.autoFocus ? props.autoFocus : undefined}
-                    className={props.inputClassName ? props.inputClassName : "form-control"}
+                    className={props.controlClassName ? props.controlClassName : DEFAULT_CONTROL_CLASS_NAME}
                     disabled={props.fieldDisabled ? props.fieldDisabled : undefined}
                     id={props.fieldName ? props.fieldName : FIELD_NAME}
                     name={props.fieldName ? props.fieldName : FIELD_NAME}

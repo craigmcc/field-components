@@ -1,9 +1,9 @@
 // CheckboxElement -----------------------------------------------------------
 
 // Renders the <Row> component for a checkbox, with up to three nested <Col>s:
-// - Optional CheckboxLabel component
-// - Required CheckboxInput component
-// - Optional BaseAction component
+// - Optional <CheckboxLabel> component
+// - Required <CheckboxInput> component
+// - Optional <BaseAction> component
 
 // External Modules ----------------------------------------------------------
 
@@ -12,27 +12,29 @@ import Row from "react-bootstrap/Row";
 
 // Internal Modules ----------------------------------------------------------
 
-import { BaseAction } from "./BaseAction";
-import { CheckboxInput } from "./CheckboxInput";
-import { CheckboxLabel } from "./CheckboxLabel";
+import { BaseAction, Props as BaseActionProps } from "./BaseAction";
+import { Props as BaseElementProps } from "./BaseElement";
+import { CheckboxInput, Props as CheckboxInputProps } from "./CheckboxInput";
+import { CheckboxLabel, Props as CheckboxLabelProps } from "./CheckboxLabel";
 import { DEFAULT_ELEMENT_CLASS_NAME } from "./Constants";
-import {
-    BaseActionProps,
-    BaseLabelProps,
-    CheckboxElementProps,
-    CheckboxInputProps,
-} from "./PropTypes";
+
+// Property Details ---------------------------------------------------------
+
+export interface Props extends
+    BaseActionProps, BaseElementProps, CheckboxInputProps, CheckboxLabelProps {
+}
 
 // Component Details --------------------------------------------------------
 
-export const CheckboxElement = (props: CheckboxElementProps) => {
+export const CheckboxElement = (props: Props) => {
 
     return (
         <>
             <Row
                 className={props.elementClassName ? props.elementClassName : DEFAULT_ELEMENT_CLASS_NAME}
+                data-testid="CheckboxElement"
             >
-                <CheckboxLabel {...props as BaseLabelProps}/>
+                <CheckboxLabel {...props as CheckboxLabelProps}/>
                 <CheckboxInput {...props as CheckboxInputProps}/>
                 <BaseAction {...props as BaseActionProps}/>
             </Row>

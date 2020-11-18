@@ -11,12 +11,19 @@ import Col from "react-bootstrap/Col";
 
 // Internal Modules ----------------------------------------------------------
 
-import { DEFAULT_INPUT_CLASS_NAME } from "./Constants";
-import { CheckboxInputProps } from "./PropTypes";
+import { DEFAULT_CONTROL_CLASS_NAME, DEFAULT_INPUT_CLASS_NAME } from "./Constants";
+import { BaseInputProps } from "./Types";
+
+// Property Details ----------------------------------------------------------
+
+export interface Props extends BaseInputProps {
+    label?: string;             // Label text [Checked?]
+}
+
 
 // Component Details ---------------------------------------------------------
 
-export const CheckboxInput = (props: CheckboxInputProps) => {
+export const CheckboxInput = (props: Props) => {
 
     const FIELD_NAME = (props.fieldName ? props.fieldName : "checkbox");
 
@@ -26,7 +33,7 @@ export const CheckboxInput = (props: CheckboxInputProps) => {
                 <input
                     autoFocus={props.autoFocus ? props.autoFocus : undefined}
                     checked={props.fieldValue ? props.fieldValue : undefined}
-                    className={props.inputClassName ? props.inputClassName : "mr-2"}
+                    className={props.controlClassName ? props.controlClassName : "mr-2"}
                     disabled={props.fieldDisabled ? props.fieldDisabled : undefined}
                     id={props.fieldName ? props.fieldName : FIELD_NAME}
                     name={props.fieldName ? props.fieldName : FIELD_NAME}

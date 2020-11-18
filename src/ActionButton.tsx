@@ -9,11 +9,23 @@ import Button from "react-bootstrap/Button";
 
 // Internal Modules ----------------------------------------------------------
 
-import { ActionButtonProps } from "./PropTypes";
+import { ButtonSize, ButtonType, OnClick, Variant } from "./Types";
+
+// Property Details ----------------------------------------------------------
+
+export interface Props {
+    autoFocus?: boolean;        // Set automatic focus on this element? [false]
+    disabled?: boolean;         // Mark button disabled? [not rendered]
+    label?: string;             // Button label [Action]
+    onClick?: OnClick;          // Handle (event) for button click [not rendered]
+    size?: ButtonSize;          // Size of this button [sm]
+    type?: ButtonType;          // Type of this button [button]
+    variant?: Variant;          // Style variant [warning]
+}
 
 // Component Details ---------------------------------------------------------
 
-export const ActionButton = (props: ActionButtonProps) => {
+export const ActionButton = (props: Props) => {
 
     return (
         <>

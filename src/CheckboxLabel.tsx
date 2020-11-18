@@ -12,7 +12,12 @@ import Col from "react-bootstrap/Col";
 // Internal Modules ----------------------------------------------------------
 
 import { DEFAULT_LABEL_CLASS_NAME } from "./Constants";
-import { BaseLabelProps } from "./PropTypes";
+import { BaseLabelProps } from "./Types";
+
+// Property Details ----------------------------------------------------------
+
+export interface Props extends BaseLabelProps {
+}
 
 // Component Details ---------------------------------------------------------
 

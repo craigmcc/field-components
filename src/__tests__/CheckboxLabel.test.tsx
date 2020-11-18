@@ -10,19 +10,18 @@ import "@testing-library/jest-dom";
 
 // Internal Modules ----------------------------------------------------------
 
-import { CheckboxLabel } from "../../src/CheckboxLabel";
+import { CheckboxLabel, Props as CheckboxLabelProps } from "../../src/CheckboxLabel";
 import { DEFAULT_LABEL_CLASS_NAME } from "../Constants";
-import { BaseLabelProps } from "../../src/PropTypes";
 
 // Test Globals --------------------------------------------------------------
 
 const TEST_ID = "CheckboxLabelCol";
 
-const defaultProps: BaseLabelProps = {
+const defaultProps: CheckboxLabelProps = {
     fieldName: "field"
 }
 
-const renderComponent = (testProps: Partial<BaseLabelProps> = {}) => {
+const renderComponent = (testProps: Partial<CheckboxLabelProps> = {}) => {
     return render(
         <CheckboxLabel
             {...defaultProps}
@@ -38,7 +37,7 @@ describe("<CheckboxLabel/>", () => {
 
     test("Render with all props", () => {
 
-        const testProps: Partial<BaseLabelProps> = {
+        const testProps: Partial<CheckboxLabelProps> = {
             fieldName: "myField",
             label: "My Label",
             labelClassName: "col-99"
@@ -55,7 +54,7 @@ describe("<CheckboxLabel/>", () => {
 
     test("Render with minimum props", () => {
 
-        const testProps: Partial<BaseLabelProps> = {
+        const testProps: Partial<CheckboxLabelProps> = {
             label: "Minimum Label:"
         }
         renderComponent(testProps);

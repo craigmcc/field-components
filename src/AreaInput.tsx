@@ -9,21 +9,31 @@ import Col from "react-bootstrap/Col";
 
 // Internal Modules ----------------------------------------------------------
 
-import { DEFAULT_INPUT_CLASS_NAME } from "./Constants";
-import { AreaInputProps } from "./PropTypes";
+import { DEFAULT_CONTROL_CLASS_NAME, DEFAULT_INPUT_CLASS_NAME } from "./Constants";
+import { BaseTextProps } from "./Types";
+
+// Property Details ----------------------------------------------------------
+
+export interface Props extends BaseTextProps {
+    cols?: number               // Visible width (in characters) [not rendered]
+    rows?: number               // Visible height (in rows) [not rendered]
+}
 
 // Component Details ---------------------------------------------------------
 
-export const AreaInput = (props: AreaInputProps) => {
+export const AreaInput = (props: Props) => {
 
     const FIELD_NAME = (props.fieldName ? props.fieldName : "area");
 
     return (
         <>
-            <Col className={props.fieldClassName ? props.fieldClassName : DEFAULT_INPUT_CLASS_NAME}>
+            <Col
+                className={props.fieldClassName ? props.fieldClassName : DEFAULT_INPUT_CLASS_NAME}
+                data-testid="AreaInputCol"
+            >
                 <textarea
                     autoFocus={props.autoFocus ? props.autoFocus : undefined}
-                    className={props.inputClassName ? props.inputClassName : "form-control"}
+                    className={props.controlClassName ? props.controlClassName : DEFAULT_CONTROL_CLASS_NAME}
                     cols={props.cols ? props.cols : undefined}
                     disabled={props.fieldDisabled ? props.fieldDisabled : undefined}
                     id={props.fieldName ? props.fieldName : FIELD_NAME}
