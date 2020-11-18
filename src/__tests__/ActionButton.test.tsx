@@ -71,7 +71,7 @@ describe("<ActionButton/>", () => {
 
     });
 
-    test("Render with onClick handler", () => {
+    test("Render with event handlers", () => {
 
         const onClick = jest.fn();
 

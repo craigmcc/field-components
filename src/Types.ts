@@ -77,6 +77,6 @@ export type Variant = "primary" | "secondary" | "success" | "warning" | "danger"
 
 export type OnBlur = (event: React.FocusEvent<HTMLElement>) => void;
 export type OnChange = (event: React.ChangeEvent<HTMLElement>) => void;
-export type OnClick = (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+export type OnClick = (event: React.MouseEvent<HTMLElement>) => void;
 export type OnFocus = (event: React.FocusEvent<HTMLElement>) => void;
 export type OnKeyDown = (event: React.KeyboardEvent<HTMLElement>) => void;
