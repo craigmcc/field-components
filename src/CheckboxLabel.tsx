@@ -2,7 +2,8 @@
 
 // Renders the <Col> component for the label area before a checkbox "Input"
 // component.  The actual label text will be rendered after the checkbox
-// itself, by the CheckboxInput component.
+// itself, by the CheckboxInput component.  This component is only rendered
+// if a "label" property is passed.
 
 // External Modules ----------------------------------------------------------
 
